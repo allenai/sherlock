@@ -1,0 +1,13 @@
+git+https://github.com/openai/CLIP.git
+frozendict
+lapjv
+numpy
+Pillow
+scikit_learn
+scipy
+torch
+torchvision
+tqdm
+ftfy
+regex
+jupyter_innotater
