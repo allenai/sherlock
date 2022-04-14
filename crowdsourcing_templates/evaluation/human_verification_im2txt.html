@@ -1,0 +1,576 @@
+            <html lang="en">
+
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+                    <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+                    <!-- BOOTSTRAP CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+                    <!-- HITPUB CSS -->
+                    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+                    <style id="hitpub_css">
+                        /***********************************************
+                        MOSAIC BOOSTRAP OVERWRITES
+                        ***********************************************/
+                        #hitinfo .card {
+                            border-radius: 0;
+                        }
+                        #hitinfo .card:first-child {
+                            border-bottom: 0;
+                        }
+                         #hitinfo button.btn-link {
+                            color: #06486F;
+                            text-decoration: none;
+                         }
+                        #hitinfo button.btn-link:hover {
+                            text-decoration: none;
+                        }
+                        #hit ul.question-choice {
+                            list-style-type: none;
+                        }
+                        /***********************************************
+                        MOSAIC GENERAL STYLING
+                        ***********************************************/
+                         body {
+                             font-family: "Open Sans", "Roboto", sans-serif;
+                         }
+                        textarea#feedback {
+                            width: 100%
+                        }
+                        input#submitButton {
+                            margin: auto;
+                            display: block;
+                            background-color: #2172a4;
+                            color: #fff;
+                            font-size: 1.125rem;
+                            padding: .5rem 1rem;
+                            cursor: pointer;
+                            border-radius: 1rem;
+                        }
+                        input#submitButton:hover {
+                            background-color: #06486F;
+                        }
+                    </style>
+		  <!-- HIT START -->
+                  <div id="hit" class="container">
+
+                    <!-- ACCORDION START -->
+                    <div class="col-12 accordion" id="hitinfo">
+
+                      <!-- INSTRUCTIONS START -->
+                      <div class="card">
+                        <div class="card-header" id="instructionsHeading">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#instructions" aria-expanded="true" aria-controls="instructions">
+                              Instructions (click to expand/collapse)
+                            </button>
+                          </h5>
+                        </div>
+                        <div class="collapse show" id="instructions" aria-labelledby="instructionsHeading" data-parent="#hitinfo">
+                          <div class="card-body">
+                            <div class="card-content">
+                              <p>Thanks for participating in this HIT!</p>
+
+                              <h2 class="border-top pt-2">Your task:</h2>
+
+                              <p>
+				You will be presented with an image
+				that contains a highlighted
+				region. You'll also be shown an
+				statement that a human made about the
+				highlighted region as an
+				example. Then, you'll be shown
+				statements that a machine made about the
+				same image/region. Your job is to rate
+				the predictions of the machine. You'll
+				rate the predictions on a bad/okay/good
+				scale.
+			      </p>
+			      <p>
+				More details about the rating system:
+				<ul>
+				  <li><strong>Bad:</strong> there is little to no evidence in the image for the conclusion, or the conclusion is verifiably false. </li>
+				  <li><strong>Okay:</strong> the sentence is probably correct for the scene, but there is definitely a better region in the image that would support the conclusion.</li>
+				  <li><strong>Good:</strong> definitely correct, and the region is the best part of the image to support the conclusion.</li>
+				</ul>
+			      </p>
+                              <p><span class="badge badge-warning">NOTE</span> Please be forgiving of minor spelling, grammar, and plural (e.g., "man" vs. "men") errors.</p>
+
+
+
+			      <!-- EXAMPLES START -->
+
+
+
+			      <h2 class="border-top pt-2">Example 1:</h2>
+
+
+
+			      <div class="mt-2 col ml-3">
+				<div class="col mt-3">
+				  <div class="row ml-2"><em>(Click on the image to view at its original size.)</em></div>
+				  <a href="https://storage.googleapis.com/ai2-jack-public/sherlock_mturk/example/method%3D2_idx%3D23492.png" data-lightbox="image-example" data-title="ImageExample">
+                                    <img src="https://storage.googleapis.com/ai2-jack-public/sherlock_mturk/example/method%3D2_idx%3D23492.png" style="max-width:100%" class="source_image"/>
+				  </a>
+				</div>
+
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Human example:</strong> <span  style="font-size: 1.5em;">"it is part of the car"</span></div>
+
+
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 1:</strong> <span  style="font-size: 1.5em;">"The car is well-maintained."</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex1" id="answer1_ex1" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex1">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex1" id="answer2_ex1" value="2"  checked >
+				  <label class="form-check-label" for="answer2_ex1">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex1" id="answer3_ex1" value="1" disabled>
+				  <label class="form-check-label" for="answer3_ex1">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>The car might be well maintained mechanically or otherwise, and the intact mirror provides some evidence. But, we can't be that confident that the car is well maintained either from the image as a whole, or from only the mirror. </i> </div>
+                              </div>
+			      <hr class="w-100">
+
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 2:</strong> <span  style="font-size: 1.5em;">"the weather is perfect for a drive"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex2" id="answer1_ex2" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex2">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex2" id="answer2_ex2" value="2" disabled>
+				  <label class="form-check-label" for="answer2_ex2">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex2" id="answer3_ex2" value="1" checked>
+				  <label class="form-check-label" for="answer3_ex2">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>The weather isn't really visible in this picture so it definitely could be raining. Also, the mirror is not good evidence for the weather.</i> </div>
+                              </div>
+			      <hr class="w-100">
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 3:</strong> <span  style="font-size: 1.5em;">"the mirror belongs to a car"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex3" id="answer1_ex3" value="3" checked >
+				  <label class="form-check-label" for="answer1_ex3">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex3" id="answer2_ex3" value="2" disabled>
+				  <label class="form-check-label" for="answer2_ex3">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex3" id="answer3_ex3" value="1" disabled>
+				  <label class="form-check-label" for="answer3_ex3">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i> This statement is about the mirror, which is highlighted, and it's clear that the mirror is a car mirror in a car.</i> </div>
+                              </div>
+			      <hr class="w-100">
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 4:</strong> <span  style="font-size: 1.5em;">"there is someone in the car"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex4" id="answer1_ex4" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex4">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex4" id="answer2_ex4" value="2" checked>
+				  <label class="form-check-label" for="answer2_ex4">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex4" id="answer3_ex4" value="1" disabled>
+				  <label class="form-check-label" for="answer3_ex4">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>There is someone in the car, but the mirror isn't the region of the image that's most appropriate.</i></div>
+                              </div>
+			      <hr class="w-100">
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 5:</strong> <span  style="font-size: 1.5em;">"the location is in a vehicle"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex5" id="answer1_ex5" value="3" checked>
+				  <label class="form-check-label" for="answer1_ex5">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex5" id="answer2_ex5" value="2" disabled>
+				  <label class="form-check-label" for="answer2_ex5">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex5" id="answer3_ex5" value="1" disabled>
+				  <label class="form-check-label" for="answer3_ex5">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>The location of the mirror is in a vehicle.</i></div>
+                              </div>
+
+
+
+
+
+
+
+
+
+
+			      <h2 class="border-top pt-2">Example 2:</h2>
+
+			      <div class="mt-2 col ml-3">
+				<div class="col mt-3">
+				  <div class="row ml-2"><em>(Click on the image to view at its original size.)</em></div>
+				  <a href="https://storage.googleapis.com/ai2-jack-public/sherlock_mturk/example/method%3D2_idx%3D16926.png" data-lightbox="image-example" data-title="ImageExample">
+                                    <img src="https://storage.googleapis.com/ai2-jack-public/sherlock_mturk/example/method%3D2_idx%3D16926.png" style="max-width:100%" class="source_image"/>
+				  </a>
+				</div>
+
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Human example:</strong> <span  style="font-size: 1.5em;">"they are at a formal party"</span></div>
+
+
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 1:</strong> <span  style="font-size: 1.5em;">"he is the captain of the Titanic"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex6" id="answer1_ex6" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex6">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex6" id="answer2_ex6" value="2"  disabled >
+				  <label class="form-check-label" for="answer2_ex6">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex6" id="answer3_ex6" value="1" checked>
+				  <label class="form-check-label" for="answer3_ex6">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>Neither of the highlighted men appear to be a ship captian, let alone of the titanic.</i> </div>
+                              </div>
+			      <hr class="w-100">
+
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 2:</strong> <span  style="font-size: 1.5em;">"the man is a person of high importance."</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex7" id="answer1_ex7" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex7">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex7" id="answer2_ex7" value="2" checked>
+				  <label class="form-check-label" for="answer2_ex7">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex7" id="answer3_ex7" value="1" disabled>
+				  <label class="form-check-label" for="answer3_ex7">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>These two men are well-dressed, and appear to be conversing with some general. Thus, it's possible/probable they are of high importance.</i> </div>
+                              </div>
+			      <hr class="w-100">
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 3:</strong> <span  style="font-size: 1.5em;">"he is a military officer"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex8" id="answer1_ex8" value="3" disabled >
+				  <label class="form-check-label" for="answer1_ex8">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex8" id="answer2_ex8" value="2" checked>
+				  <label class="form-check-label" for="answer2_ex8">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex8" id="answer3_ex8" value="1" disabled>
+				  <label class="form-check-label" for="answer3_ex8">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>The unhighlighted man is a military officer, so the statement could be true, but a different region would be better.</i> </div>
+                              </div>
+			      <hr class="w-100">
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 4:</strong> <span  style="font-size: 1.5em;">"they are the butler for the residence"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex9" id="answer1_ex9" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex9">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex9" id="answer2_ex9" value="2" disabled>
+				  <label class="form-check-label" for="answer2_ex9">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex9" id="answer3_ex9" value="1" checked>
+				  <label class="form-check-label" for="answer3_ex9">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>Residences generally don't have two butlers, so it's probably not the case that these men are butlers.</i></div>
+                              </div>
+			      <hr class="w-100">
+
+			      <div class="mt-2 col ml-3">
+				<div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 5:</strong> <span  style="font-size: 1.5em;">"the man is part of some secret order"</span></div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer1_ex10" id="answer1_ex10" value="3" disabled>
+				  <label class="form-check-label" for="answer1_ex10">
+                                    <strong>Good:</strong> statement is true for image, the region highlighted is the best
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer2_ex10" id="answer2_ex10" value="2" disabled>
+				  <label class="form-check-label" for="answer2_ex10">
+                                    <strong>Okay:</strong> statement is probably true for the scene, but a different region would be better, or I'm not confident it's true.
+				  </label>
+				</div>
+				<div class="form-check col-12">
+				  <input class="form-check-input" type="radio" name="elicited_label_answer3_ex10" id="answer3_ex10" value="1" checked>
+				  <label class="form-check-label" for="answer3_ex10
+">
+                                    <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+				  </label>
+				</div>
+				<div class="mt-3 col-12 "><strong>Why?</strong> <i>There's no evidence that the highlighted men are members of some secret order.</i></div>
+                              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+			  </div>
+			</div>
+		      </div>
+		    </div>
+		    <!-- ACCORDION END -->
+
+		    <!-- MTURK INPUT START -->
+                    <div class="col-12 mt-5 mb-1 border-top">
+                      <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'>
+                        <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+                        <input type='hidden' name='ee' id='ee'/>
+
+                        <div id="question" class="row border-bottom mb-3 question-choice-container">
+                          <div class="row ml-2"><em>(Click on the image to view at its original size.)</em></div>
+                          <div class="row">
+                            <div class="col mt-3">
+                              <a href="${image}" data-lightbox="image-reasonable" data-title="ImageA">
+                                <img src="${image}" style="max-width:100%" class="source_image"/>
+                              </a>
+                            </div>
+                          </div>
+
+                          <div class="mt-3 col-12 bg-dark text-light"><strong>Human example:</strong> <span  style="font-size: 1.5em;">"${statement}"</span></div>
+			  <br>
+
+
+			  
+			  
+                          <div class="mt-2 col ml-3">
+			    <div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 1:</strong> <span  style="font-size: 1.5em;">"${machine_statement_1}"</span></div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer1_1" id="answer1_1" value="3" required>
+                              <label class="form-check-label" for="answer1_1">
+                                <strong>Good:</strong> statement is true for image, the region highlighted is the best
+                              </label>
+                            </div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer2_1" id="answer2_1" value="2" required>
+                              <label class="form-check-label" for="answer2_1">
+                                <strong>Okay:</strong> statement could be true, but a different region would be better, or I can't tell for sure it's true.
+                              </label>
+                            </div>
+			    <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer3_1" id="answer3_1" value="1" required>
+                              <label class="form-check-label" for="answer3_1">
+                                <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+                              </label>
+                            </div>
+                          </div>
+			  
+			  <hr class="w-100">
+			  
+                          <div class="mt-2 col ml-3">
+			    <div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 2:</strong> <span  style="font-size: 1.5em;">"${machine_statement_2}"</span></div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer1_2" id="answer1_2" value="3" required>
+                              <label class="form-check-label" for="answer1_2">
+                                <strong>Good:</strong> statement is true for image, the region highlighted is the best
+                              </label>
+                            </div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer2_2" id="answer2_2" value="2" required>
+                              <label class="form-check-label" for="answer2_2">
+                                <strong>Okay:</strong> statement could be true, but a different region would be better, or I can't tell for sure it's true.
+                              </label>
+                            </div>
+			    <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer3_2" id="answer3_2" value="1" required>
+                              <label class="form-check-label" for="answer3_2">
+                                <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+                              </label>
+                            </div>
+                          </div>
+			  
+			  <hr class="w-100">
+			  
+                          <div class="mt-2 col ml-3">
+			    <div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 3:</strong> <span  style="font-size: 1.5em;">"${machine_statement_3}"</span></div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer1_3" id="answer1_3" value="3" required>
+                              <label class="form-check-label" for="answer1_3">
+                                <strong>Good:</strong> statement is true for image, the region highlighted is the best
+                              </label>
+                            </div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer2_3" id="answer2_3" value="2" required>
+                              <label class="form-check-label" for="answer2_3">
+                                <strong>Okay:</strong> statement could be true, but a different region would be better, or I can't tell for sure it's true.
+                              </label>
+                            </div>
+			    <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer3_3" id="answer3_3" value="1" required>
+                              <label class="form-check-label" for="answer3_3">
+                                <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+                              </label>
+                            </div>
+                          </div>
+			  
+			  <hr class="w-100">
+			  
+                          <div class="mt-2 col ml-3">
+			    <div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 4:</strong> <span  style="font-size: 1.5em;">"${machine_statement_4}"</span></div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer1_4" id="answer1_4" value="3" required>
+                              <label class="form-check-label" for="answer1_4">
+                                <strong>Good:</strong> statement is true for image, the region highlighted is the best
+                              </label>
+                            </div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer2_4" id="answer2_4" value="2" required>
+                              <label class="form-check-label" for="answer2_4">
+                                <strong>Okay:</strong> statement could be true, but a different region would be better, or I can't tell for sure it's true.
+                              </label>
+                            </div>
+			    <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer3_4" id="answer3_4" value="1" required>
+                              <label class="form-check-label" for="answer3_4">
+                                <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+                              </label>
+                            </div>
+                          </div>
+			  
+			  <hr class="w-100">
+			  
+                          <div class="mt-2 col ml-3">
+			    <div class="mt-3 col-12 bg-dark text-light"><strong>Machine statement 5:</strong> <span  style="font-size: 1.5em;">"${machine_statement_5}"</span></div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer1_5" id="answer1_5" value="3" required>
+                              <label class="form-check-label" for="answer1_5">
+                                <strong>Good:</strong> statement is true for image, the region highlighted is the best
+                              </label>
+                            </div>
+                            <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer2_5" id="answer2_5" value="2" required>
+                              <label class="form-check-label" for="answer2_5">
+                                <strong>Okay:</strong> statement could be true, but a different region would be better, or I can't tell for sure it's true.
+                              </label>
+                            </div>
+			    <div class="form-check col-12">
+                              <input class="form-check-input" type="radio" name="elicited_label_answer3_5" id="answer3_5" value="1" required>
+                              <label class="form-check-label" for="answer3_5">
+                                <strong>Bad:</strong> statement is verifiably incorrect, is not justified by the image nor the region, or is irrelevant.
+                              </label>
+                            </div>
+                          </div>
+			  
+			  <hr class="w-100">
+
+                        </div>
+
+                        <!-- OPTIONAL FEEDBACK -->
+                        <div class="row mt-5">
+                          <div class="col-8 offset-2 col-lg-6 offset-lg-3">
+                            <p>(Optional) Please let us know if anything was unclear, if you experienced any issues, or if you have any other feedback for us.</p>
+                            <textarea id="feedback" name="feedback" rows=3></textarea>
+                          </div>
+                        </div>
+
+                        <!-- SUBMIT BUTTON -->
+                        <div class="row mt-5">
+                          <div class="col-2 offset-5">
+                            <input id="submitButton" onclick="getnext()" type="submit" value="Submit" />
+                          </div>
+                        </div>
+
+                      </form>
+                      <script language='Javascript'>turkSetAssignmentID();</script>
+                    </div>
+                    <!-- MTURK INPUT END -->
+                  </div>
+                  <!-- HIT END -->
+                  <!-- BOOSTRAP JS -->
+                  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+                  <!-- HITPUB JS -->
+                  <script id="hitpub_js">
+
+                  </script>

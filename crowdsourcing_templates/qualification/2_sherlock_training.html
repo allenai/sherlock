@@ -1,0 +1,1116 @@
+            <html lang="en">
+
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+                    <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+                    <!-- BOOTSTRAP CSS -->
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+
+                    <!-- HITPUB CSS -->
+                    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+                    <style id="hitpub_css">
+                        /***********************************************
+                        MOSAIC BOOSTRAP OVERWRITES
+                        ***********************************************/
+                        #hitinfo .card {
+                            border-radius: 0;
+                        }
+                        
+                         #hitinfo button.btn-link {
+                            color: #fff;
+                            text-decoration: none;
+                         }
+                        #hitinfo button.btn-link:hover {
+                            text-decoration: none;
+                        }
+                        #hit ul.question-choice {
+                            list-style-type: none;
+                        }
+                        
+                        /***********************************************
+                        MOSAIC GENERAL STYLING
+                        ***********************************************/
+                        body {
+                            font-family: "Open Sans", "Roboto", sans-serif;
+                            line-height: 1.25;
+                        }
+                        textarea#feedback {
+                            width: 100%
+                        }
+                        input#submitButton {
+                            margin: auto;
+                            display: block;
+                            background-color: #2172a4;
+                            color: #fff;
+                            font-size: 1.125rem;
+                            padding: .5rem 1rem;
+                            cursor: pointer;
+                            border-radius: 1rem;
+                        }
+                        input#submitButton:hover {
+                            background-color: #06486F;
+                        }
+                        
+                        input[type="radio"] {
+                            cursor: pointer;
+                        }
+                        
+                        div.question {
+                            border-bottom: solid 1px #ccc;
+                            padding: 1rem 0;
+                        }
+                        
+                        /***********************************************
+                        HIT CUSTOM GENERAL STYLING
+                        ***********************************************/
+                        div.card-header {
+                            background-color: #06486F;
+                        }
+                        div.card-header h5 {
+                            color: #fff !important;
+                        }
+                        
+                        li {
+                            margin: .5em 0;
+                        }
+                        
+                        label[for="2"]:hover, label[for="2"].active {
+                            background-color: #009300 !important;
+                        }
+                        label[for="1"]:hover, label[for="1"].active {
+                            background-color: #00b300 !important;
+                        }
+                        label[for="0"]:hover, label[for="0"].active {
+                            background-color: #999999 !important;
+                        }
+                        label[for="-1"]:hover, label[for="-1"].active {
+                            background-color:  #e30000 !important;
+                        }
+                        label[for="-2"]:hover, label[for="-2"].active {
+                            background-color: #9f0000 !important;
+                        }
+                        
+                        label[for="2"]:before, label[for="2"]:before {
+                            content:"strongly agree";
+                        }
+                        label[for="1"]:before, label[for="1"]:before {
+                            content:"moderately or weakly \A agree";
+                            white-space: pre;
+                        }
+                        label[for="0"]:before, label[for="0"]:before {
+                            content:"neither";
+                            white-space: pre;
+                        }
+                        label[for="-1"]:before, label[for="-1"]:before {
+                            content:"moderately or weakly  \A disagree";
+                            white-space: pre;}
+                        
+                        label[for="-2"]:before, label[for="-2"]:before {
+                            content:"strongly disagree";
+                        }
+                        
+                        .story-title {
+                            background-color: white;
+                            padding:2px;
+                            text-align: center;
+                            color: #333;
+                        }
+                        
+                        .beginning-title{
+                            background-color: #009E73;
+                            border: 2px double #009E73;
+                            color: white;
+                        }
+                        
+                        .ending-title{
+                            border: 2px double red;
+                            color: red;
+                        }
+                        
+                        .middle-title {
+                            border: 2px double #2393FF;
+                            color:#2393FF;
+                        }
+                        
+                        .story {
+                            border:1px solid #ccc;
+                            text-align: center;
+                            padding:10px;
+                        }
+                        
+                        .gray-out{
+                            background-color:#eee;
+                            color:white;
+                            border: 1px solid #eee;
+                        }
+                        
+                        .key-term {
+                            font-weight:bold;
+                            font-style:italic;
+                        }
+                        
+                        .key-term1{
+                            color: #0072B2;
+                            font-weight:bold;
+                        }
+                        
+                        .key-term2{
+                            color:#D55E00;
+                            font-weight:bold;
+                        }
+                        
+                        .key-term3{
+                            color: #CC79A7;
+                            font-weight:bold;
+                        }
+                        
+                        
+                        .border-o1{
+                            border: 1px solid #009E73;
+                        }
+                        
+                        .border-o2 {
+                            border: 1px solid red;
+                        }
+                        
+                        
+                        .question-choice-container {
+                            padding-top:2em;
+                            border-top:1px solid #eee;
+                        }
+                        
+                        .question-choice-container label.btn {
+                            background-color: #eee;
+                            border: none;
+                            margin-left: 1 !important;
+                            color: black;
+                            font-size:95%;
+                        }
+                        
+                        .question-choice-container label.btn:hover {
+                            color: white;
+                            font-size:95%;
+                        }
+                        
+                        .example-choice-container label.btn {
+                            background-color: #ddd;
+                            border: 0;
+                            margin-left: 0 !important;
+                            color: black;
+                            font-size:95%;
+                        }
+                        
+                        
+                        label[for="btn_choice1"]:hover, label[for="btn_choice1"].active {
+                            background-color:  #fc6f00 !important;
+                            border: 1px solid gray;
+                        }
+                        
+                        
+                        .example-card {
+                            margin-top: 3em;
+                        }
+                        
+                        .legend {
+                            margin-top: .33rem;
+                            font-weight: normal;
+                            padding-left: 40px;
+                        }
+                        .legend .label{
+                            font-style: italic;
+                        }
+                        
+                        .emphasize {
+                            font-weight: bold;
+                            color: black;
+                        }
+                        
+                        .obj-emph {
+                            font-weight: bold;
+                            color: blue;
+                        }
+                        
+                        .use-emph{
+                            font-weight: bold;
+                            color: green;
+                        }
+                        
+                        .example {
+                            pointer-events:none;
+                            font-size:90%;
+                        }
+                        
+                        .goal {
+                            border-radius: .25rem;
+                            padding: 0.5rem 0.5rem;
+                            color: white;
+                            background-color: #555;
+                            transform: translateY(-20%);
+                        }
+                        
+                        @media (max-width:460px){
+                          body{
+                            display: none;
+                          }
+                        }
+                        
+                        .vbottom{
+                            position: relative;
+                            top: 100%;
+                            transform: translateY(50%);
+                        }
+                        
+                        .ht {
+                            border: 1px;
+                            color: white;
+                            background: #fc6f00;
+                        }
+                        
+                        .mycolor-header1 {
+                            background-color:#D62687;
+                            color:white;
+                        }
+                        
+                        .mycolor-header2 {
+                            background-color:#04C792;
+                            color:white;
+                        }
+                        
+                        .mycolor-header3 {
+                            background-color:#773806;
+                            color:white;
+                        }
+                        
+                        .mycolor-header4 {
+                            background-color:#0000ff;
+                            color:white;
+                        }
+                        
+                        .mycolor-header5 {
+                            background-color:#ff0000;
+                            color:white;
+                        }
+                        
+                        .mycolor-border1 {
+                            border:2px solid #D62687;
+                        }
+                        
+                        .mycolor-border2 {
+                            border:2px solid #04C792;
+                        }
+                        
+                        .mycolor-border3 {
+                            border:2px solid #773806;
+                        }
+                        
+                        .mycolor-border4 {
+                            border:2px solid #0000ff;
+                        }
+                        
+                        .mycolor-border5 {
+                            border:2px solid #ff0000;
+                        }
+                    </style>
+
+                    <!-- HIT START -->
+                    <div id="hit" class="container">
+
+                        <!-- ACCORDION START -->
+                        <div class="col-12 accordion" id="hitinfo">
+
+                            <!-- INSTRUCTIONS START -->
+                            <div class="card">
+                                <div class="card-header" id="instructionsHeading">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#instructions" aria-expanded="true" aria-controls="instructions">
+                                            Instructions (click to expand/collapse)
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div class="collapse show" id="instructions" aria-labelledby="instructionsHeading" data-parent="#hitinfo">
+                                    <div class="card-body">
+                                        <div class="card-content">
+                                            <p>Thanks for participating in this HIT!</p>
+
+                                            <div class="border bg-light pl-2 pt-2 pr-1 pb-2">
+                                            <ul>
+                                            <li>This is TRAINING (not quals, which you passed). <strong>Please only do ONE!</strong>
+                                            <ul>
+                                            <li><strong>If you have completed training hit, please do not do this again.</strong> If we are not responding fast enough to your training completion, feel free to contact us.</li>
+                                             <li>This training task is expected to take about 7-8 mins.
+                                            <li>If you are comfortable, please answer demographics survey at the end.
+                                             </ul>
+
+                                            <li>The instructions have changed and examples have been updated. Please read through the instructions and examples;
+                                             and play with the new format. Major new things:
+                                             <ul>
+                                             <li>Bounding boxes and additional examples</li>
+                                             <li>Split into Part 1 and Part 2. Please <u>do them in sequence!</u> (Or this will get confusing really fast)</li>
+                                             <li>We have added "How to pick good clues" so that you have a better idea of what we are looking for </li>
+                                             </ul>
+
+                                            <li>The actual task is priced at $1.1 per HIT (subject to change).</li>
+                                             <li>Bonus opportunities will be available in the actual task. </li>
+                                            <li>Leave us a comment if you have any.</li>
+                                            </ul>
+                                            </div>
+
+
+                                            <h5 class="border-top pt-2">Your task:</h5>
+
+                                            <p>In this task, we are asking you to put on your detective thinking cap.
+                                            Given an image, find <span class="key-term1">observable clues</span> that might indicate information
+                                            about a person, situation, or setting
+                                            <u>that may not be necessarily obvious in the image</u> (we will call this <span class="key-term2">indication</span>).
+                                            You will do this in two steps. </p>
+                                            <ul>
+                                                <li>PART 1: Examine the image and find 3 <span class="key-term1">observable clues</span>.  <br>
+                                                ↳ An <span class="key-term1">observable clue</span> MUST be something in the picture <small>(e.g., an open algebra math workbook)</small></li>
+                                                <ol>
+                                                    <li><strong> Choose</strong> observation number from the drop down box (1 is already chosen for you) and
+                                                    <strong>write down</strong> your clues you observed in the field to the right (What you write here will be transferred over to the PART 2).</li>
+                                                    <li><strong>Draw bounding boxes</strong> for the clues (you may draw multiple if there are multiple things you observed).
+                                                    <li><strong>Repeat</strong> steps 1&2 for all the observations you want to make. <br>
+                                                    Then, move to Part 2 to provide indications for each of the clues you provided.</li>
+                                                </ol>
+
+                                                <li>PART 2: For each <span class="key-term1">observable clue</span>, provide a <span class="key-term2">indication</span>.<br>
+                                                ↳ An <span class="key-term2">indication</span> is a bit of <u>non obvious</u> information about what the clue means to you
+                                                <small>(e.g., an open algebra math workbook might indicate there might be a high school student who was just studying )</small></li>
+                                                <ul>
+                                                    <li><strong>Write down</strong> the indications.
+                                                    <li><strong>Rate</strong> how <u>likely</u> for the <span class="key-term2">indications</span> to be true given <span class="key-term1">the clue</span></li>
+                                                    <ul>
+                                                    <li><strong>certain</strong>: It's obvious or i'm very much certain what I said is true (I'm totally willing to bet on it!).
+                                                    <li><strong>likely</strong>: It is likely or probable that what I said is true (both moderate and strong likelyhood uncertainties belong here).
+                                                    <li><strong>possible</strong>: It's in the realm of possibily but it's an educated guess at best.
+                                                    </ul>
+                                                    <li>We aren't looking for a particular distribution in the ratings nor do we value one rating over another.
+                                                    If you turn in all "possible"s for an image, for example, that's just as acceptable as turning in one of each!
+                                                </ul>
+
+                                            </ul>
+                                            <p>Five examples are given below the instruction panel.</p>
+
+                                            <h5 class="border-top pt-2">Rules:</h5>
+                                            <ol>
+                                                <li>For  <span class="key-term1">observable clues</span>: </li>
+                                                <ul>
+                                                    <li>Write a noun phrase: "the book", "gray skies", "a group of people"</li>
+                                                    <li>When possible, please specify details relevant as to where the object, entity, or thing:</li>
+                                                    <ul>
+                                                    <li> "the book" → "the book <em>under the table</em>"
+                                                    <li> "buttons" → "buttons <em>on the man's shirt</em>"
+                                                    <li> "a group of people" → "a group of people <em>in the pool</em>"
+                                                    <li> "a painting" → "a painting <em>hanging on the wall</em>"
+                                                    <li> "a dog" → "a dog <em>following a person</em>"
+                                                    </ul>
+                                                    <li>You can provide similar <span class="key-term1">observable clues</span> multiple times, but please <u>tailor your clue to the observation made</u> (see Example 2).
+                                                    <li>When <b>bounding the clues</b>, please remember: the boxes <u>do not have to be perfect</u>! 1-3 items in a picture is plenty for bounding.
+                                                    Do not spend too much time on this step!
+                                                </ul>
+                                                <li>For  <span class="key-term2">indications</span>: </li>
+                                                <ul>
+                                                    <li>Write in complete sentences</li>
+                                                    <li>Make the indications <strong>realistic</strong></li>
+                                                    <li>Please <strong>DO NOT</strong> write indications that <strong>contradict</strong> each other. <br>
+                                                    <div class="mt-2">For example, indications like <em>"this is a gathering of family members"</em> and <em>"this is a work event"</em> <u>cannot both be true</u>.
+                                                    These are contradictions of each other. Please AVOID these.</div></li>
+                                                </ul>
+                                                <li>At this time, we are <strong>NOT interested in</strong> in plain descriptions of what's going on, what people are doing, and what the people are thinking.
+                                                Please see <strong>"How to Pick Good Clues/Indications"</strong> for further detail.
+                                                </li>
+                                                <li>Please use weather related observations if it's a salient aspect of the image or you have nothing else you can talk about. Please use weather as the last resort. Example 4 observation 2 is an example of a weather observation.
+                                                </li>
+                                                <li>Please avoid gendered pronouns like "he", "she", "him" or "her". If you desire, you can use "they".
+                                                <li>Read through example and how-to sections below!</li>
+
+                                            </ol>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="helpHeading">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#help" aria-expanded="true" aria-controls="help">
+                                            How to Pick Good Clues/Indications (click to expand/collapse)
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div class="" id="help" aria-labelledby="helpHeading" data-parent="#hitinfo">
+                                    <div class="card-body">
+                                        <div class="card-content">
+                                            <p>Please <strong>avoid</strong>, when possible:</p>
+                                            <ul>
+                                                <li>plain description of what's obviously going on</li>
+                                                <li>what people are <u>doing</u> in the picture
+                                                <li>what people are <u>thinking</u>, <u>wanting</u> or <u>desiring</u>
+                                                <li>what they might be <u>immediately planning to do</u>
+                                            </ul>
+
+                                            <p><strong>Instead</strong>, stick to information that might <u>indicate</u> or <u>suggest</u> something interesting about a person, situation or setting. Ask yourself:</p>
+                                            <ul>
+                                                <li>Why what's happening is happening? Any indicators for the reasons?</li>
+                                                <li>Think about the location. Where is this? How can you tell?</li>
+                                                <li>What activity just happened. How can you tell?</li>
+                                                <li>What does the image say about the people in the photos, people related to the photos or person taking the photo?
+                                                Do they have a family? Can you tell if certain things matter to them? What are they like? How do you know?</li>
+                                                <li>When is this happening? Christmas time? Afternoon tea? Middle of the night? How do you know?</li>
+                                                <li>Can you say something about the property of items you see in the image? Sturdy? Fragile? New? Loved? How do you know?</li>
+                                                <li>Can you say something about the age of the image? A photo taken decade ago? Recently? How do you know?</li>
+                                            </ul>
+
+                                            <div class="row">
+                                                <div class="col col-3">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/icecream.jpg" width="100%"/>
+                                                </div>
+                                                <div class="col col-9">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col"><span class="key-term1">clue</span></th>
+                                                            <th scope="col"><span class="key-term2">indication</span></th>
+                                                            <th scope="col" width="30%">explanation</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-danger">DON'T</span></th>
+                                                                <td>ice cream</td>
+                                                                <td>The woman is going to eat the icecream.</td>
+                                                                <td>This is more of a caption: what is happening in the picture?</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-danger">DON'T</span></th>
+                                                                <td>ice cream</td>
+                                                                <td>The woman wants to eat the icecream.</td>
+                                                                <td>Please don't make guesses about what the character in the picture is thinking, wanting or planning to do.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>ice cream in their hand</td>
+                                                                <td>It is a warm day.</td>
+                                                                <td scope="col">Warmth of a day isn't something you can see, but is likely true (given what we know about when icecream is eaten).</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>scooped ice cream in a cone</td>
+                                                                <td>The woman bought this just now at an icecream shop.</td>
+                                                                <td scope="col">If a woman is eating icecream at home, there's higher likelyhood that it would be in a bowl. A small sugarcone suggests this may be recently bought to be eaten.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col col-3">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/coffee.jpg" width="100%"/>
+                                                </div>
+                                                <div class="col col-9">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col"><span class="key-term1">clue</span></th>
+                                                            <th scope="col"><span class="key-term2">indication</span></th>
+                                                            <th scope="col" width="30%">explanation</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-danger">DON'T</span></th>
+                                                                <td>cup of coffee</td>
+                                                                <td>The woman is drinking it.</td>
+                                                                <td>Again, this is a caption of what's happening. Also, here, we are making an assumption that this is coffee that the woman is drinking. Ask yourself what clued you to the fact that it might be coffee?
+                                                                Now, <em>that</em> is interesting! See below.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>styrofoam cup with a black stirring stick in the woman's hand</td>
+                                                                <td>The cup is filled with hot coffee.</td>
+                                                                <td scope="col">Good guess. Generally when people are drinking out of a styrofoam cup, it's likely a hot drink like coffee, tea or hot chocolate.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>a metal chair and what looks like a wall in the background</td>
+                                                                <td>The woman is sitting outdoors at a cafe.</td>
+                                                                <td scope="col">Of course, this could be the woman's home, but the wall and metal chair suggests it might be outdoor sitting at a cafe.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                             </div>
+                                            <div class="row">
+                                                <div class="col col-3">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/pencil.jpg" width="100%"/>
+                                                </div>
+                                                <div class="col col-9">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                            <th scope="col"></th>
+                                                            <th scope="col"><span class="key-term1">clue</span></th>
+                                                            <th scope="col"><span class="key-term2">indication</span></th>
+                                                            <th scope="col" width="30%">explanation</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-danger">DON'T</span></th>
+                                                                <td>pencil</td>
+                                                                <td>A pencil exists.</td>
+                                                                <td>Totally. We get that this is a boring image but this is so obvious. Can you say something else about it?
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>a well-sharpened point on pencil</td>
+                                                                <td>A person just sharpened it.</td>
+                                                                <td scope="col">This is a good clue/indication pair as it is something we expect was done if we see a sharp point on a pencil. It doesn't happen spontaneously.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>a pencil held to a white piece of paper</td>
+                                                                <td>Someone is about to write or draw on the piece of paper.</td>
+                                                                <td scope="col">Again, albeit a guess, it is a good clue/indicator pair given what happens to pencils and papers in this world.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><span class="badge badge-success">TRY</span></th>
+                                                                <td>a shadow under the pencil</td>
+                                                                <td>Either the window is open or a light is turned on.</td>
+                                                                <td scope="col">Shadow indicates a source of light.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="exampleHeading">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#examples" aria-expanded="true" aria-controls="examples">
+                                            Examples (click to expand/collapse)
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div class="" id="examples" aria-labelledby="exampleheading" data-parent="#hitinfo">
+                                    <div class="card-body">
+                                        <div class="card-content">
+                                            <div class="row border-bottom mb-3">
+                                                <h5 class="col col-12 bg-dark text-light">Example 1</h5>
+                                                <div class="col col-6">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/table-setting.jpg" width="90%"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <span class="row font-weight-bold mb-1 mycolor-header1">Observation 1:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">a clean table setting on the table</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">There's a lunch happening but it has not started yet.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">likely</span> </span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header2">Observation 2:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">utensils arraged formally around the plate</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">It is a fancy lunch that is about to happen.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header3">Observation 3:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">wooden table painted in green and a wooden floor in the background</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This lunch may be taking place indoor in a dining space with retro-rustic decor</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">possible</span> (I'm totally guessing here!)</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row  border-bottom mb-3">
+                                                <h5 class="col col-12 bg-dark text-light">Example 2</h5>
+                                                <div class="col col-6">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/motel.jpg" width="90%"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <span class="row font-weight-bold mb-1 mycolor-header1">Observation 1:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">a white information card on a decorative pillow</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This is a hotel or motel room.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">certain</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header2">Observation 2:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">bed that is made and a room without clutter/suitcase</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This hotel room is not being currently used by guests.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">certain</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header3">Observation 3:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">neatly arranged bed sheets and furniture in the room</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">The cleaning crew came by recently.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                               </div>
+                                            </div>
+                                            <div class="row  border-bottom mb-3">
+                                                <h5 class="col col-12 bg-dark text-light">Example 3</h5>
+                                                <div class="col col-6">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/desk.jpg" width="90%"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <span class="row font-weight-bold mb-1  mycolor-header1">Observation 1:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">books, paper, keyboard, stapler, and a mug on the desk</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">Someone has been working at the desk recently.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header2">Observation 2:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">a stacks of paper and items in disarray on the desk</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">The one who works at this desk is a busy person.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header3">Observation 3:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">stacks of paper that reads MIT and a book that reads "Recipes in C" on the desk</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">The person who works at this desk is a computer programmer.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row  border-bottom mb-3">
+                                                <h5 class="col col-12 bg-dark text-light">Example 4</h5>
+                                                <div class="col col-6">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/city.jpg" width="90%"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <span class="row font-weight-bold mb-1 mycolor-header1">Observation 1:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">water pooled in the streets.</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">It has been raining.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">certain</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header2">Observation 2:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">gray skies above</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">It might rain more.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">likely</span> (since it might not rain too)</span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1  mycolor-header3">Observation 3:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">lots of cars and taxis, and skyscrapers in the background</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This is downtown area of a city.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1  mycolor-header4">Observation 4:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">Staples, the store, in one of the buildings</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This somewhere in the US</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">possible</span> (This could be also another country like Canada)</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row  border-bottom mb-3">
+                                                <h5 class="col col-12 bg-dark text-light">Example 5</h5>
+                                                <div class="col col-6">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/bread.jpg" width="90%"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <span class="row font-weight-bold mb-1 mycolor-header1">Observation 1:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">a sliced loaf of bread on a cutting board</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This is a home-made bread and not a pre-cut store bread.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header2">Observation 2:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">cutting board on a counter</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This a kitchen.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">possible</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1  mycolor-header3">Observation 3:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">whole wheat or whole grain bread with sesame seeds on top</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">The one who is about to enjoy this bread is health conscious.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">possible</span></span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row  border-bottom mb-3">
+                                                <h5 class="col col-12 bg-dark text-light">Example 6</h5>
+                                                <div class="col col-6">
+                                                    <img src="https://ai2-atomic.s3-us-west-2.amazonaws.com/images/observable_clues/examples/child-boxed.jpg" width="90%"/>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <span class="row font-weight-bold mb-1 mycolor-header1">Observation 1:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">a boy wearing a tie and a vest with neatly combed hair</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This child is dressed up for a special occasion.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">likely</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1 mycolor-header2">Observation 2:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">a wooden wall with green flaking paint in the background with a wooden post</span>
+                                                    <span class="row key-term2">The boy is standing in front of a wooden barn or a shed</span>
+                                                    <span class="row ml-3">This a kitchen.</span>
+                                                    <span class="row pt-1">I think this is <span class="ml-1 pl-1 pr-1 border ht">possible</span></span>
+                                                    </div>
+
+                                                    <span class="row font-weight-bold mb-1  mycolor-header3">Observation 3:</span>
+                                                    <div class="ml-3 mb-3">
+                                                    <span class="row key-term1">I spy...</span>
+                                                    <span class="row ml-3">the boy's gaze that is not fixed at the photographer</span>
+                                                    <span class="row key-term2">It might indicate that...</span>
+                                                    <span class="row ml-3">This is a photo shoot and the boy has been asked to look at someone else for the shot.</span>
+                                                    <span class="row pt-1">This is <span class="ml-1 pl-1 pr-1 border ht">possible</span></span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- INSTRUCTIONS END -->
+                        </div>
+                        <!-- ACCORDION END -->
+
+
+                        <!-- MTURK INPUT START -->
+                        <div class="col-12 mt-5 mb-1 border-top">
+                            <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'>
+                                <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+                                <input type='hidden' name='ee' id='ee'/>
+
+
+
+                                <div id="question" class="row border-bottom mb-3 question-choice-container">
+
+                                    <img src="${url}" width="90%" class="source_image" hidden/>
+
+
+                                    <!-- observations and bounding box -->
+                                    <div class="col col-12 bg-primary text-light mb-1"><span style="font-size:130%">PART 1: Make your observations and bound them in boxes</span></div>
+                                    <div class="col col-12 mt-3">
+                                        <div class="mb-3 border-bottom border-top">
+                                        Observe image below, then:
+                                        <ul>
+                                        <li><span class="badge badge-success">STEP 1:</span>
+                                        <strong>Choose</strong> observation number from the drop down box (1 is already chosen for you) and <strong>write down</strong> your observed clues in the text field to the right.
+                                        (What you write here will be transferred over to the PART 2 below.)</li>
+                                        <li><span class="badge badge-success">STEP 2:</span>
+                                        <strong>Draw bounding boxes</strong> in the image below. <u>The boxes do not have to be perfect!</u>
+                                        <ul>
+                                            <li>Just click and drag over parts of the you want to box.
+                                            <li>1-3 boxes are enough. You don't have to go crazy here! We just want the key bits.
+                                            <li>To remove a box, hover over the top right corner of the box until you see a <span class="badge badge-dark">X</span>.</li>
+                                        </ul>
+                                        <li><span class="badge badge-success">STEP 3:</span> <strong>Repeat</strong> steps 1&2 for all the observations you want to make. <br>
+                                        Then, move to Part 2 to provide indications for each of the clues you provided.</li>
+                                        </div>
+
+                                        <span class="bg-dark text-light pl-2 pr-2 mt-2 mb-2 mr-1"><strong>Observation #</strong></span>
+                                        <select id="obs_select">
+                                            <option value="1" id="obs_select1" selected>1</option>
+                                            <option value="2" id="obs_select2">2</option>
+                                            <option value="3" id="obs_select3">3</option>
+                                        </select>
+
+                                        <span class="key-term1 pl-2">I spy...</span>
+                                        <input type="text" id="obs_desc" size="80" placeholder="type your observed clues here"/>
+                                        <textarea id="bounded_box" name="bounded_box" rows="30" cols="50" style="font-family:monospace;" readonly hidden></textarea>
+
+                                        <div class="row ml-3"><small><em>(Observations 1-3 are required; 4 & 5 are bonus/optional)</em></small></div>
+
+                                        <div id="bbox_annotator" style="display:inline-block" class="mt-2"></div>
+
+                                        <div class="row img-zoom-container offset-1">
+                                            <table>
+                                            <tr>
+                                                <td><img id="myimage" src="${url}" width="200" alt="thumbnail"></td>
+                                                <td><div id="myresult" class="img-zoom-result"></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><small><strong><em>Thumbnail<em></strong></small>
+                                                    <button type="button" class="btn btn-info btn-sm" id="reloadImageZoom">(re)load</button></td>
+                                                <td><small><strong><em>Zoomed selection<em></strong></small></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <!--- indicators -->
+                                    <div class="col col-12 bg-primary text-light mb-1 mt-3"><span style="font-size:130%">PART 2: Fill in the indications</span></div>
+                                    <div class="col col-12">
+                                        
+                                        
+                                        <div class="col-12 mt-1 pb-2 mycolor-border1" >
+                                            <div class="row text-light mb-1 pl-2 mycolor-header1"><span style="font-size:110%">Observation 1 (required): </span></div>
+
+                                            <span class="row key-term1 pl-3">I spy...</span>
+                                            <span class="row ml-3"><textarea rows=1 id="indicator_1" name ="indicator_1" style="width:100%"  required></textarea></span>
+                                            <span class="row key-term2 pl-3" id = "indicator_label_1">It might indicate that...</span>
+                                            <span class="row ml-3">
+                                                <textarea rows=1 id="significance_1" name ="significance_1" style="width:100%" required></textarea>
+                                                <div class="row mt-1 col-12">
+                                                    <div class="col col-2">
+                                                        <small>I think this is...</small>
+                                                    </div>
+                                                    <div class="form-check col col-2">
+                                                        <input class="form-check-input" type="radio" name="likelihood_1" id="likelihood_lo1" value="1" required>
+                                                        <label class="form-check-label" for="likelihood_low">
+                                                            <small><strong>possible</strong><br>(a stab, a guess)</small>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check  col col-2">
+                                                        <input class="form-check-input" type="radio" name="likelihood_1" id="likelihood_mid1" value="2" required>
+                                                        <label class="form-check-label" for="likelihood_mid">
+                                                            <small><strong>likely</strong><br>(quite to very likely)</small>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check  col col-3">
+                                                        <input class="form-check-input" type="radio" name="likelihood_1" id="likelihood_hi1" value="3" required>
+                                                        <label class="form-check-label" for="likelihood_hi">
+                                                            <small><strong>certain</strong><br>(willing to bet money on it)</small>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-12 mt-1 pb-2 mycolor-border2" >
+                                            <div class="row text-light mb-1 pl-2 mycolor-header2"><span style="font-size:110%">Observation 2 (required): </span></div>
+
+                                            <span class="row key-term1 pl-3">I spy...</span>
+                                            <span class="row ml-3"><textarea rows=1 id="indicator_2" name ="indicator_2" style="width:100%"  required></textarea></span>
+                                            <span class="row key-term2 pl-3" id = "indicator_label_2">It might indicate that...</span>
+                                            <span class="row ml-3">
+                                                <textarea rows=1 id="significance_2" name ="significance_2" style="width:100%" required></textarea>
+                                                <div class="row mt-1 col-12">
+                                                    <div class="col col-2">
+                                                        <small>I think this is...</small>
+                                                    </div>
+                                                    <div class="form-check col col-2">
+                                                        <input class="form-check-input" type="radio" name="likelihood_2" id="likelihood_lo2" value="1" required>
+                                                        <label class="form-check-label" for="likelihood_low">
+                                                            <small><strong>possible</strong><br>(a stab, a guess)</small>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check  col col-2">
+                                                        <input class="form-check-input" type="radio" name="likelihood_2" id="likelihood_mid2" value="2" required>
+                                                        <label class="form-check-label" for="likelihood_mid">
+                                                            <small><strong>likely</strong><br>(quite to very likely)</small>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check  col col-3">
+                                                        <input class="form-check-input" type="radio" name="likelihood_2" id="likelihood_hi2" value="3" required>
+                                                        <label class="form-check-label" for="likelihood_hi">
+                                                            <small><strong>certain</strong><br>(willing to bet money on it)</small>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-12 mt-1 pb-2 mycolor-border3" >
+                                            <div class="row text-light mb-1 pl-2 mycolor-header3"><span style="font-size:110%">Observation 3 (required): </span></div>
+
+                                            <span class="row key-term1 pl-3">I spy...</span>
+                                            <span class="row ml-3"><textarea rows=1 id="indicator_3" name ="indicator_3" style="width:100%"  required></textarea></span>
+                                            <span class="row key-term2 pl-3" id = "indicator_label_3">It might indicate that...</span>
+                                            <span class="row ml-3">
+                                                <textarea rows=1 id="significance_3" name ="significance_3" style="width:100%" required></textarea>
+                                                <div class="row mt-1 col-12">
+                                                    <div class="col col-2">
+                                                        <small>I think this is...</small>
+                                                    </div>
+                                                    <div class="form-check col col-2">
+                                                        <input class="form-check-input" type="radio" name="likelihood_3" id="likelihood_lo3" value="1" required>
+                                                        <label class="form-check-label" for="likelihood_low">
+                                                            <small><strong>possible</strong><br>(a stab, a guess)</small>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check  col col-2">
+                                                        <input class="form-check-input" type="radio" name="likelihood_3" id="likelihood_mid3" value="2" required>
+                                                        <label class="form-check-label" for="likelihood_mid">
+                                                            <small><strong>likely</strong><br>(quite to very likely)</small>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check  col col-3">
+                                                        <input class="form-check-input" type="radio" name="likelihood_3" id="likelihood_hi3" value="3" required>
+                                                        <label class="form-check-label" for="likelihood_hi">
+                                                            <small><strong>certain</strong><br>(willing to bet money on it)</small>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+
+                                <!-- OPTIONAL FEEDBACK -->
+                                <div class="row mt-5">
+                                    <div class="col-8 offset-2 col-lg-6 offset-lg-3">
+                                        <p>(Optional) Please let us know if anything was unclear, if you experienced any issues, or if you have any other fedback for us.</p>
+                                        <textarea id="feedback" name="feedback" rows=3></textarea>
+                                    </div>
+                                </div>
+
+
+                                <!-- SUBMIT BUTTON -->
+                                <div class="row mt-5">
+                                    <div class="col-2 offset-5">
+                                        <input id="submitButton" onclick="getnext()" type="submit" value="Submit" />
+                                    </div>
+                                </div>
+
+                            </form>
+                            <script language='Javascript'>turkSetAssignmentID();</script>
+                        </div>
+                        <!-- MTURK INPUT END -->
+                     </div>
+                    <!-- HIT END -->
+
+                    <!-- BOOSTRAP JS -->
+                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+                    <!-- HITPUB JS -->
+                    <script id="hitpub_js">
+                        // TimeMe.js
+                        (function () { var e, t; e = this, t = function () { var r = { startStopTimes: {}, idleTimeoutMs: 3e4, currentIdleTimeMs: 0, checkStateRateMs: 250, active: !1, idle: !1, currentPageName: "default-page-name", timeElapsedCallbacks: [], userLeftCallbacks: [], userReturnCallbacks: [], trackTimeOnElement: function (e) { var t = document.getElementById(e); t && (t.addEventListener("mouseover", function () { r.startTimer(e) }), t.addEventListener("mousemove", function () { r.startTimer(e) }), t.addEventListener("mouseleave", function () { r.stopTimer(e) }), t.addEventListener("keypress", function () { r.startTimer(e) }), t.addEventListener("focus", function () { r.startTimer(e) })) }, getTimeOnElementInSeconds: function (e) { var t = r.getTimeOnPageInSeconds(e); return t || 0 }, startTimer: function (e, t) { if (e || (e = r.currentPageName), void 0 === r.startStopTimes[e]) r.startStopTimes[e] = []; else { var n = r.startStopTimes[e], i = n[n.length - 1]; if (void 0 !== i && void 0 === i.stopTime) return } r.startStopTimes[e].push({ startTime: t || new Date, stopTime: void 0 }), r.active = !0, r.idle = !1 }, stopAllTimers: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.stopTimer(e[t]) }, stopTimer: function (e, t) { e || (e = r.currentPageName); var n = r.startStopTimes[e]; void 0 !== n && 0 !== n.length && (void 0 === n[n.length - 1].stopTime && (n[n.length - 1].stopTime = t || new Date), r.active = !1) }, getTimeOnCurrentPageInSeconds: function () { return r.getTimeOnPageInSeconds(r.currentPageName) }, getTimeOnPageInSeconds: function (e) { var t = r.getTimeOnPageInMilliseconds(e); return void 0 === t ? void 0 : t / 1e3 }, getTimeOnCurrentPageInMilliseconds: function () { return r.getTimeOnPageInMilliseconds(r.currentPageName) }, getTimeOnPageInMilliseconds: function (e) { var t = r.startStopTimes[e]; if (void 0 !== t) { for (var n = 0, i = 0; i < t.length; i++) { var s = t[i].startTime, o = t[i].stopTime; void 0 === o && (o = new Date), n += o - s } return Number(n) } }, getTimeOnAllPagesInSeconds: function () { for (var e = [], t = Object.keys(r.startStopTimes), n = 0; n < t.length; n++) { var i = t[n], s = r.getTimeOnPageInSeconds(i); e.push({ pageName: i, timeOnPage: s }) } return e }, setIdleDurationInSeconds: function (e) { var t = parseFloat(e); if (!1 !== isNaN(t)) throw { name: "InvalidDurationException", message: "An invalid duration time (" + e + ") was provided." }; return r.idleTimeoutMs = 1e3 * e, this }, setCurrentPageName: function (e) { return r.currentPageName = e, this }, resetRecordedPageTime: function (e) { delete r.startStopTimes[e] }, resetAllRecordedPageTimes: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.resetRecordedPageTime(e[t]) }, resetIdleCountdown: function () { r.idle && r.triggerUserHasReturned(), r.idle = !1, r.currentIdleTimeMs = 0 }, callWhenUserLeaves: function (e, t) { this.userLeftCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, callWhenUserReturns: function (e, t) { this.userReturnCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, triggerUserHasReturned: function () { if (!r.active) for (var e = 0; e < this.userReturnCallbacks.length; e++) { var t = this.userReturnCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.startTimer() }, triggerUserHasLeftPage: function () { if (r.active) for (var e = 0; e < this.userLeftCallbacks.length; e++) { var t = this.userLeftCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.stopAllTimers() }, callAfterTimeElapsedInSeconds: function (e, t) { r.timeElapsedCallbacks.push({ timeInSeconds: e, callback: t, pending: !0 }) }, checkState: function () { for (var e = 0; e < r.timeElapsedCallbacks.length; e++)r.timeElapsedCallbacks[e].pending && r.getTimeOnCurrentPageInSeconds() > r.timeElapsedCallbacks[e].timeInSeconds && (r.timeElapsedCallbacks[e].callback(), r.timeElapsedCallbacks[e].pending = !1); !1 === r.idle && r.currentIdleTimeMs > r.idleTimeoutMs ? (r.idle = !0, r.triggerUserHasLeftPage()) : r.currentIdleTimeMs += r.checkStateRateMs }, visibilityChangeEventName: void 0, hiddenPropName: void 0, listenForVisibilityEvents: function () { void 0 !== document.hidden ? (r.hiddenPropName = "hidden", r.visibilityChangeEventName = "visibilitychange") : void 0 !== document.mozHidden ? (r.hiddenPropName = "mozHidden", r.visibilityChangeEventName = "mozvisibilitychange") : void 0 !== document.msHidden ? (r.hiddenPropName = "msHidden", r.visibilityChangeEventName = "msvisibilitychange") : void 0 !== document.webkitHidden && (r.hiddenPropName = "webkitHidden", r.visibilityChangeEventName = "webkitvisibilitychange"), document.addEventListener(r.visibilityChangeEventName, function () { document[r.hiddenPropName] ? r.triggerUserHasLeftPage() : r.triggerUserHasReturned() }, !1), window.addEventListener("blur", function () { r.triggerUserHasLeftPage() }), window.addEventListener("focus", function () { r.triggerUserHasReturned() }), document.addEventListener("mousemove", function () { r.resetIdleCountdown() }), document.addEventListener("keyup", function () { r.resetIdleCountdown() }), document.addEventListener("touchstart", function () { r.resetIdleCountdown() }), window.addEventListener("scroll", function () { r.resetIdleCountdown() }), setInterval(function () { r.checkState() }, r.checkStateRateMs) }, websocket: void 0, websocketHost: void 0, setUpWebsocket: function (e) { if (window.WebSocket && e) { var t = e.websocketHost; try { r.websocket = new WebSocket(t), window.onbeforeunload = function () { r.sendCurrentTime(e.appId) }, r.websocket.onopen = function () { r.sendInitWsRequest(e.appId) }, r.websocket.onerror = function (e) { console && console.log("Error occurred in websocket connection: " + e) }, r.websocket.onmessage = function (e) { console && console.log(e.data) } } catch (e) { console && console.error("Failed to connect to websocket host.  Error:" + e) } } return this }, websocketSend: function (e) { r.websocket.send(JSON.stringify(e)) }, sendCurrentTime: function (e) { var t = { type: "INSERT_TIME", appId: e, timeOnPageMs: r.getTimeOnCurrentPageInMilliseconds(), pageName: r.currentPageName }; r.websocketSend(t) }, sendInitWsRequest: function (e) { var t = { type: "INIT", appId: e }; r.websocketSend(t) }, initialize: function (e) { var t = r.idleTimeoutMs || 30, n = r.currentPageName || "default-page-name", i = void 0, s = void 0; e && (t = e.idleTimeoutInSeconds || t, n = e.currentPageName || n, i = e.websocketOptions, s = e.initialStartTime), r.setIdleDurationInSeconds(t).setCurrentPageName(n).setUpWebsocket(i).listenForVisibilityEvents(), r.startTimer(void 0, s) } }; return r }, "undefined" != typeof module && module.exports ? module.exports = t() : "function" == typeof define && define.amd ? define([], function () { return e.TimeMe = t() }) : e.TimeMe = t() }).call(this);
+                        
+                        TimeMe.initialize({
+                            currentPageName: "task",
+                            idleTimeoutInSeconds: 30
+                        });
+                        
+                        
+                        
+                        $(document).ready(function() {
+                            $('#submitButton').click(function () {
+                                try {
+                                    $('input[name=ee]').attr('value', TimeMe.getTimeOnCurrentPageInSeconds());
+                                } catch {
+                                }
+                                return true;
+                            });
+                              control_bbox();
+                        });
+                        
+                        $(document).ready(hide_show_impossible);
+                        
+                        function hide_show_impossible() {
+                            $("input[type='checkbox']").on('change', function() {
+                                name = $(this).attr('name').split('-')[1];
+                                if($(this).prop('checked')) {
+                                    $('#obs1-edit-'+name).removeAttr('required');
+                                    $('#obs1-edit-'+name).prop("disabled", true);
+                        
+                                } else {
+                                    $('#obs1-edit-'+name).attr('required', true);
+                                    $('#obs1-edit-'+name).prop("disabled", false);
+                                }
+                            });
+                        }
+                        
+                        $('#obs_desc').keyup(function() {
+                            var sel_obs = $('#obs_select').val();
+                            $('#indicator_'+sel_obs).text($(this).val());
+                        });
+                        
+                        $('#obs_select').change(function(x){
+                            var sel_obs = $('#obs_select').val();
+                            var current_text = $('#indicator_'+sel_obs).text();
+                        
+                            $('#obs_desc').val(current_text);
+                        });
+                        
+                        
+                        
+                        function control_bbox() {
+                          var annotator = new BBoxAnnotator({
+                            id: '#bbox_annotator',
+                            url: $('img.source_image').attr('src'),
+                            labels_id: 'obs_select',
+                            labels_desc_id: 'obs_desc',
+                            border_width: 3,
+                            onchange: function(entries) {
+                              // Input the text area on change. Use "hidden" input tag unless debugging.
+                              // <input id="annotation_data" name="annotation_data" type="hidden" />
+                              // $("#annotation_data").val(JSON.stringify(entries))
+                              $("#bounded_box").text(JSON.stringify(entries, null, "  "));
+                            }
+                          });
+                        }
+
+                    </script>
+                    <!-- BBOX JS -->
+                    <script id="bbox_js" src="https://jenahwang.github.io/misc/bbox.js"></script>
+
+                    <!-- For charting JS -->
+                    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js" type="text/javascript"></script>
