@@ -6,7 +6,7 @@ This directory contains three things:
 2. Example scripts that show-off a leaderboard submission of the CLIP-backbone models from the original paper.
 3. The evaluation scripts the leaderboard uses to produce the official metrics.
 
-[The sherlock leaderboard is hosted here](https://github.com/allenai/sherlock/tree/main/leaderboard_eval)!
+[The sherlock leaderboard is hosted here](https://leaderboard.allenai.org/sherlock)!
 
 <p align="center">
   <img src="leaderboard_preview.png" width=700px>
