@@ -5,10 +5,10 @@ corpus. If you find the [paper](https://arxiv.org/abs/2202.04800), corpus, and m
 for your own work, please consider citing:
 
 ```
-@article{hesselhwang2022abduction,
+@inproceedings{hesselhwang2022abduction,
   title={{The Abduction of Sherlock Holmes: A Dataset for Visual Abductive Reasoning}},
   author={*Hessel, Jack and *Hwang, Jena D and Park, Jae Sung and Zellers, Rowan and Bhagavatula, Chandra and Rohrbach, Anna and Saenko, Kate and Choi, Yejin},
-  journal={arXiv preprint arXiv:2202.04800},
+  booktitle={ECCV},
   year={2022}
 }
 ```
