@@ -84,7 +84,7 @@ class CLIPDataset(torch.utils.data.Dataset):
             Resize(n_px, interpolation=Image.BICUBIC),
             RandomCrop(n_px),
             RandomHorizontalFlip(),
-            RandomGrayscale(),
+            #RandomGrayscale(), # these were used in the model in the paper, but, something seems bugged when pytorch updated.
             ColorJitter(brightness=.5, hue=.3),
             lambda image: image.convert("RGB"),
             ToTensor(),
@@ -105,7 +105,7 @@ class CLIPDataset(torch.utils.data.Dataset):
             SquarePad(),
             Resize(n_px, interpolation=Image.BICUBIC),
             RandomHorizontalFlip(),
-            RandomGrayscale(),
+            #RandomGrayscale(), # these were used in the model in the paper, but, something seems bugged when pytorch updated.
             ColorJitter(brightness=.5, hue=.3),
             lambda image: image.convert("RGB"),
             ToTensor(),
@@ -186,7 +186,7 @@ def parse_args():
 
     parser.add_argument('--clip_model',
                         default='ViT-B/16',
-                        choices=['ViT-B/32', 'RN50', 'RN101', 'RN50x4', 'ViT-B/16', 'RN50x16', 'RN50x64'])
+                        choices=['ViT-B/32', 'RN50', 'RN101', 'RN50x4', 'ViT-B/16', 'RN50x16', 'RN50x64', 'ViT-L/14@336px'])
 
     parser.add_argument('--batch_size',
                         type=int,
@@ -408,7 +408,7 @@ def main():
 
     model.float()
 
-    print('train/val/test {}/{}/{}'.format(len(train), len(val), len(test)))
+    print('train/val {}/{}'.format(len(train), len(val)))
 
     loss_img = torch.nn.CrossEntropyLoss()
     loss_txt = torch.nn.CrossEntropyLoss()
