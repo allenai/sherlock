@@ -262,6 +262,11 @@ def parse_args():
                         help='if > 0, cache this many previous batches for negative sample loss computation. this is an experimental feature not used in the paper.',
                         default=0)
 
+    parser.add_argument('--val_stat',
+                        type=str,
+                        help='which stat should we use for early stopping?',
+                        choices=['loss', 'meanrank'])
+
     args = parser.parse_args()
 
     if args.negative_sample_cache > 0:
@@ -535,7 +540,7 @@ def main():
                     np.mean(text2im_ranks),
                     len(text2im_ranks)))
 
-                val_loss = running_sum_loss / n
+                val_loss = running_sum_loss / n if args.val_stat == 'loss' else (np.mean(im2text_ranks) + np.mean(text2im_ranks)) / 2
                 reduce_lr.step(val_loss)
 
                 if val_loss < best_val_loss:
