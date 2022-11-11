@@ -265,6 +265,7 @@ def parse_args():
     parser.add_argument('--val_stat',
                         type=str,
                         help='which stat should we use for early stopping?',
+                        default='loss',
                         choices=['loss', 'meanrank'])
 
     args = parser.parse_args()
